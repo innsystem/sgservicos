@@ -78,3 +78,121 @@
 .subfooter {
     font-size: 12px;
 }
+
+/* Ajustes de tamanho dos logos */
+/* Logo no header */
+.main-menu-three__logo img {
+    max-width: 160px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Logo no sticky header (header fixo) */
+.stricky-header .main-menu-three__logo img,
+.stricky-header.main-menu-three .main-menu-three__logo img {
+    max-width: 160px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Logo no footer */
+.footer-widget-two__logo img {
+    max-width: 160px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Logo no menu mobile */
+.mobile-nav__content .logo-box img {
+    max-width: 160px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ajustes responsivos para logos */
+@media (max-width: 991px) {
+    .main-menu-three__logo img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    .stricky-header .main-menu-three__logo img,
+    .stricky-header.main-menu-three .main-menu-three__logo img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    .footer-widget-two__logo img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-menu-three__logo img {
+        max-width: 90px;
+        max-height: 90px;
+    }
+    
+    .stricky-header .main-menu-three__logo img,
+    .stricky-header.main-menu-three .main-menu-three__logo img {
+        max-width: 90px;
+        max-height: 90px;
+    }
+    
+    .footer-widget-two__logo img {
+        max-width: 90px;
+        max-height: 90px;
+    }
+}
+
+/* Ajuste do título do slider principal */
+.main-slider-three__title {
+    max-width: 50%;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Ajuste do texto do slider principal */
+.main-slider-three__text {
+    max-width: 50%;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Ajustes responsivos para o título e texto do slider */
+@media (max-width: 991px) {
+    .main-slider-three__title {
+        max-width: 60%;
+    }
+    
+    .main-slider-three__text {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-slider-three__title {
+        max-width: 80%;
+    }
+    
+    .main-slider-three__text {
+        max-width: 80%;
+    }
+}
+
+.main-slider-three .container{
+    padding-top:50px;
+}

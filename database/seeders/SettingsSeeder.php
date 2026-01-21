@@ -17,9 +17,9 @@ class SettingsSeeder extends Seeder
         $settings = [
             ['key' => 'logo', 'value' => null],
             ['key' => 'favicon', 'value' => null],
-            ['key' => 'meta_title', 'value' => 'Bem-vindos | SG Serviços'],
-            ['key' => 'meta_keywords', 'value' => 'contabilidade, serviços contábeis, abertura de empresa, escrituração fiscal, simples nacional, departamento pessoal, consultoria contábil'],
-            ['key' => 'meta_description', 'value' => 'SG Serviços - Escritório contábil moderno e inovador. Oferecemos soluções contábeis eficientes, personalizadas e acessíveis. Abertura de empresas, escrituração fiscal e contabilidade geral.'],
+            ['key' => 'meta_title', 'value' => 'Bem-vindos | SG Serviços - Contábil & BPO Financeiro / DP / RH'],
+            ['key' => 'meta_keywords', 'value' => 'contabilidade, serviços contábeis, abertura de empresa, escrituração fiscal, simples nacional, departamento pessoal, consultoria contábil, BPO financeiro, departamento pessoal, recursos humanos'],
+            ['key' => 'meta_description', 'value' => 'SG Serviços - Contábil & BPO Financeiro / DP / RH. Escritório contábil moderno e inovador. Oferecemos soluções contábeis eficientes, personalizadas e acessíveis. Abertura de empresas, escrituração fiscal, contabilidade geral, BPO financeiro, departamento pessoal e recursos humanos.'],
             ['key' => 'script_head', 'value' => ''],
             ['key' => 'script_body', 'value' => ''],
             ['key' => 'site_name', 'value' => 'SG Serviços'],

@@ -16,22 +16,32 @@ $featuredImage = collect($portfolio->images)->firstWhere('featured', 1);
 @endif
 @endif
 
-
 @section('content')
-<section class="service-details-page section-space">
-    <div class="small-container">
+<!-- Portfolio Details Start -->
+<section class="service-details-page section-space" style="padding-top:160px;">
+    <div class="container">
         <div class="row">
             <div class="col-xxl-8 col-xl-8 col-lg-8">
                 <div class="service-details-page-content">
-                    <h3 class="service-details-title mb-25">@yield('title')</h3>
-                    {!! $portfolio->description !!}
+                    <div class="section-title text-left">
+                        <h2 class="section-title__title">{{ $portfolio->title }}</h2>
+                    </div>
+                    <div class="portfolio-details__text">
+                        {!! $portfolio->description !!}
+                    </div>
 
                     @if(isset($portfolio->images) && count($portfolio->images) > 0)
-                    @foreach($portfolio->images as $portfolio_image)
-                    <figure class="w-img">
-                        <img src="{{ asset('/storage/'.$portfolio_image->image_path) }}" alt="@yield('title')" class="mb-25">
-                    </figure>
-                    @endforeach
+                    <div class="portfolio-details__gallery">
+                        <div class="row">
+                            @foreach($portfolio->images as $portfolio_image)
+                            <div class="col-md-6 mb-4">
+                                <figure class="portfolio-details__img">
+                                    <img src="{{ asset('/storage/'.$portfolio_image->image_path) }}" alt="{{ $portfolio->title }}" class="img-fluid">
+                                </figure>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                     @endif
                 </div>
             </div>
@@ -39,40 +49,53 @@ $featuredImage = collect($portfolio->images)->firstWhere('featured', 1);
                 <div class="service-sidebar">
                     <aside>
                         <div class="service-widget-1 mb-30">
-                            <h5>Nossos Serviços</h5>
-                            <ul>
+                            <h4 class="widget-title">Nossos Serviços</h4>
+                            <ul class="list-unstyled">
                                 @foreach($getServices as $service)
                                 <li>
                                     <a href="{{ route('site.services.show', $service->slug) }}" class="{{ Route::currentRouteName() == 'site.services.show' && request()->segment(2) == $service->slug ? 'active' : '' }}">
-                                        <span>{{$service->title}}</span>
-                                        <span><i class="icon-arrow-right-double"></i></span>
+                                        <span>{{ $service->title }}</span>
+                                        <span><i class="icon-right-arrow-2"></i></span>
                                     </a>
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
+                        @if(isset($getSettings['cellphone']) && $getSettings['cellphone'] != '')
                         <div class="service-widget-2 mb-30">
                             <figure class="w-img">
                                 <img src="{{ asset('/galerias/servicos.png') }}" alt="">
                             </figure>
                             <div class="content bg-color-1 text-center">
                                 <div class="icon-box p-relative">
-                                    <i class="fal fa-phone-volume"></i>
+                                    <span class="icon-phone"></span>
                                 </div>
                                 <h5>Precisa de Orçamento?</h5>
-                                <a class="pt-25 pb-25 phone" href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['cellphone']) }}">{{ $getSettings['cellphone'] }}</a>
+                                @if(isset($getSettings['telephone']) && $getSettings['telephone'] != '')
+                                <a class="pt-25 pb-25 phone" href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" target="_blank">{{ $getSettings['telephone'] }}</a>
                                 <div class="btn-box">
-                                    <a class="primary-btn-1 btn-hover" href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['cellphone']) }}">
-                                        ENTRE EM CONTATO &nbsp; | <i class="icon-right-arrow"></i>
-                                        <span style="top: 147.172px; left: 108.5px;"></span>
+                                    <a class="thm-btn" href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" target="_blank">
+                                        ENTRE EM CONTATO <i class="icon-right-arrow"></i>
                                     </a>
                                 </div>
+                                @endif
                             </div>
                         </div>
+                        @endif
                     </aside>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Portfolio Details End -->
+@endsection
+
+@section('pageMODAL')
+@endsection
+
+@section('pageCSS')
+@endsection
+
+@section('pageJS')
 @endsection

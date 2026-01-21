@@ -25,7 +25,7 @@ class TestimonialsSeeder extends Seeder
         $testimonials = [
             [
                 'name' => 'Carlos Silva',
-                'avatar' => 'tpl_site/images/testimonial/1.webp',
+                'avatar' => 'testimonials/testimonial-2-1.jpg',
                 'content' => 'A SG Serviços abriu minha empresa de forma rápida e eficiente. O atendimento foi humanizado e todas as informações foram passadas com clareza. Recomendo!',
                 'rating' => 5,
                 'localization' => '15 March 2025',
@@ -34,7 +34,7 @@ class TestimonialsSeeder extends Seeder
             ],
             [
                 'name' => 'Maria Santos',
-                'avatar' => 'tpl_site/images/testimonial/2.webp',
+                'avatar' => 'testimonials/testimonial-2-2.jpg',
                 'content' => 'Terceirizei toda a parte fiscal da minha empresa com a SG Serviços e foi a melhor decisão. Tenho minhas CNDs em dia e o suporte no Simples Nacional é excelente.',
                 'rating' => 5,
                 'localization' => '2 February 2025',
@@ -43,7 +43,7 @@ class TestimonialsSeeder extends Seeder
             ],
             [
                 'name' => 'João Oliveira',
-                'avatar' => 'tpl_site/images/testimonial/3.webp',
+                'avatar' => 'testimonials/testimonial-2-3.jpg',
                 'content' => 'A agilidade nos processos e o compromisso com resultados são impressionantes. A equipe sempre está disponível para esclarecer dúvidas e orientar sobre questões fiscais.',
                 'rating' => 5,
                 'localization' => '20 January 2025',
@@ -52,7 +52,7 @@ class TestimonialsSeeder extends Seeder
             ],
             [
                 'name' => 'Ana Costa',
-                'avatar' => 'tpl_site/images/testimonial/4.webp',
+                'avatar' => 'testimonials/testimonial-2-1.jpg',
                 'content' => 'Escritório contábil moderno e inovador. A tecnologia utilizada facilita muito o processo e o atendimento online é muito prático. Estou muito satisfeita com os serviços.',
                 'rating' => 5,
                 'localization' => '8 December 2024',

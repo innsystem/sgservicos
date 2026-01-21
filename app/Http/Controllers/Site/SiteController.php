@@ -18,6 +18,7 @@ use App\Models\Specialty;
 use App\Models\Exam;
 use App\Models\Faq;
 use App\Models\Status;
+use App\Models\Slider;
 
 class SiteController extends Controller
 {
@@ -58,8 +59,12 @@ class SiteController extends Controller
         $faqs = Faq::when($statusId, function($query) use ($statusId) {
             return $query->where('status', $statusId);
         })->orderBy('category')->orderBy('sort_order', 'ASC')->get();
+        
+        $sliders = Slider::when($statusId, function($query) use ($statusId) {
+            return $query->where('status', $statusId);
+        })->orderBy('id', 'ASC')->get();
 
-        return view('site.pages.home', compact('pages', 'services', 'teams', 'testimonials', 'portfolios', 'hero', 'about', 'specialties', 'exams', 'faqs'));
+        return view('site.pages.home', compact('pages', 'services', 'teams', 'testimonials', 'portfolios', 'hero', 'about', 'specialties', 'exams', 'faqs', 'sliders'));
     }
 
     public function pageShow($slug)

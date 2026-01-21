@@ -33,8 +33,8 @@ class AboutsSeeder extends Seeder
             'features' => $features,
             'button_text' => 'Conheça nossos serviços',
             'button_link' => '/#contato',
-            'image_1' => 'tpl_site/images/misc/l1.webp',
-            'image_2' => 'tpl_site/images/misc/s1.webp',
+            'image_1' => 'fotos/about-three-img-1.jpg',
+            'image_2' => 'fotos/about-three-img-2.jpg',
             'status' => $statusEnabled->id,
             'sort_order' => 1,
         ]);

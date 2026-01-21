@@ -2,11 +2,16 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Title-->
-    <title>{{$getSettings['site_name']}}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@yield('title', $getSettings['site_name']) - Contábil & BPO Financeiro / DP / RH</title>
 
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/galerias/favicon.ico?1') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('/galerias/favicon.ico?1') }}" />
+    <link rel="shortcut icon" href="{{ asset('/galerias/favicon.ico?1') }}" type="image/x-icon" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph (OG) Meta Tags -->
@@ -24,21 +29,47 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('title', $getSettings['site_name'])">
+    <meta name="twitter:title" content="@yield('title', $getSettings['site_name']) - Contábil & BPO Financeiro / DP / RH">
     <meta name="twitter:description" content="@yield('description', $getSettings['meta_description'])">
     <meta name="twitter:image" content="@yield('image', asset($getSettings['logo']))">
 
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ asset('/galerias/favicon.ico?1') }}" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- CSS here -->
-    <link href="{{ asset('/tpl_site/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="{{ asset('/tpl_site/css/plugins.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/tpl_site/css/style.css?2') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/tpl_site/css/coloring.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/tpl_site/css/template_custom.css?2') }}" rel="stylesheet" type="text/css">
-    <!-- color scheme -->
-    <link id="colors" href="{{ asset('/tpl_site/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/animate/animate.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/animate/custom-animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/fontawesome/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/jarallax/jarallax.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/jquery-magnific-popup/jquery.magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/nouislider/nouislider.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/nouislider/nouislider.pips.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/odometer/odometer.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/swiper/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/corle-icons/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/tiny-slider/tiny-slider.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/reey-font/stylesheet.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/gordita-font/stylesheet.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/owl-carousel/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/owl-carousel/owl.theme.default.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/bxslider/jquery.bxslider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/bootstrap-select/css/bootstrap-select.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/vegas/vegas.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/jquery-ui/jquery-ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/timepicker/timePicker.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/vendors/nice-select/nice-select.css') }}" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{{ asset('/tpl_site/css/corle.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/css/corle-responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/css/color-3.css') }}" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('/tpl_site/css/template_custom.css') }}" />
 
     <!-- SwalFire -->
     <link href="{{ asset('/plugins/sweetalert/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
@@ -55,343 +86,401 @@
     {!! $getSettings['script_body'] !!}
     @endif
 
-    <div id="wrapper">
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
 
-        <a href="#" id="back-to-top"></a>
-
-        <!-- page preloader begin -->
-        <div id="de-loader"></div>
-        <!-- page preloader close -->
-
-        <!-- header begin -->
-        <header class="transparent header-light header-float">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="header-inner">
-                            <div class="de-flex">
-                                <div class="de-flex-col">
-                                    <!-- logo begin -->
-                                    <div id="logo">
-                                        <a href="{{ url('/') }}">
-                                            <img class="logo-main" src="{{ asset('/galerias/logo_sg.png') }}" alt="Logomarca SG Serviços">
-                                            <img class="logo-scroll" src="{{ asset('/galerias/logo_sg.png') }}" alt="Logomarca SG Serviços">
-                                            <img class="logo-mobile" src="{{ asset('/galerias/logo_sg.png') }}" alt="Logomarca SG Serviços">
-                                        </a>
-                                    </div>
-                                    <!-- logo close -->
+    <div class="page-wrapper">
+        <header class="main-header-three">
+            <div class="main-header-three__top">
+                <div class="main-header-three__top-wrapper">
+                    <div class="main-header-three__top-inner">
+                        <div class="main-header-three__top-left">
+                            <div class="main-header-three__location-box">
+                                <div class="main-header-three__location-icon">
+                                    <span class="icon-location1"></span>
                                 </div>
-
-                                <div class="de-flex-col">
-                                    <div class="de-flex-col header-col-mid">
-                                        <ul id="mainmenu">
-                                            <li><a class="menu-item" href="{{ url('/#inicio') }}">Início</a></li>
-                                            <li><a class="menu-item" href="{{ url('/#sobre') }}">Sobre</a></li>
-                                            @if(isset($menuSpecialties) && $menuSpecialties->count() > 0)
-                                            <li><a class="menu-item" href="{{ url('/#especialidades') }}">Especialidades</a>
-                                                <ul>
-                                                    @foreach($menuSpecialties as $specialty)
-                                                    <li><a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            @else
-                                            <li><a class="menu-item" href="{{ url('/#especialidades') }}">Especialidades</a></li>
-                                            @endif
-                                            @if(isset($menuExams) && $menuExams->count() > 0)
-                                            <li><a class="menu-item" href="{{ url('/#exames') }}">Exames</a>
-                                                <ul>
-                                                    @foreach($menuExams as $exam)
-                                                    <li><a href="{{ url('/#exames') }}">{{ $exam->title }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            @else
-                                            <li><a class="menu-item" href="{{ url('/#exames') }}">Exames</a></li>
-                                            @endif
-                                            <li><a class="menu-item" href="{{ url('/#faq') }}">FAQ</a></li>
-                                            <li><a class="menu-item" href="{{ url('/contato') }}">Contato</a></li>
-                                        </ul>
+                                <p class="main-header-three__location-text">
+                                    @if(isset($getSettings['address']) && trim($getSettings['address']) !== '')
+                                        {{ strip_tags($getSettings['address']) }}
+                                    @else
+                                        Endereço não informado
+                                    @endif
+                                </p>
+                            </div>
+                        </div>
+                        <div class="main-header-three__top-right">
+                            <ul class="main-header-three__contact-list list-unstyled">
+                                @if(isset($getSettings['email']) && $getSettings['email'] != '')
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email-3"></span>
                                     </div>
-                                </div>
-
-                                <div class="de-flex-col">
-                                    <a class="btn-main fx-slide w-100" href="{{ url('/contato') }}"><span>Agende sua consulta</span></a>
-                                    <div class="menu_side_area">
-                                        <span id="menu-btn"></span>
+                                    <div class="content">
+                                        <h4><a href="mailto:{{ $getSettings['email'] }}">{{ $getSettings['email'] }}</a></h4>
                                     </div>
-                                </div>
+                                </li>
+                                @endif
+                                @if(isset($getSettings['telephone']) && $getSettings['telephone'] != '')
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-phone"></span>
+                                    </div>
+                                    <div class="content">
+                                        <h4><a href="tel:{{ preg_replace('/\D/', '', $getSettings['telephone']) }}">{{ $getSettings['telephone'] }}</a></h4>
+                                    </div>
+                                </li>
+                                @endif
+                            </ul>
+                            <div class="main-header-three__social">
+                                <p class="main-header-three__social-text">Redes Sociais</p>
+                                @if(isset($getSettings['linkedin']) && $getSettings['linkedin'] != '')
+                                <a href="{{ $getSettings['linkedin'] }}" target="_blank" rel="noopener noreferrer"><span class="icon-linkedin"></span></a>
+                                @endif
+                                @if(isset($getSettings['twitter']) && $getSettings['twitter'] != '')
+                                <a href="{{ $getSettings['twitter'] }}" target="_blank" rel="noopener noreferrer"><span class="icon-twitter"></span></a>
+                                @endif
+                                @if(isset($getSettings['facebook']) && $getSettings['facebook'] != '')
+                                <a href="{{ $getSettings['facebook'] }}" target="_blank" rel="noopener noreferrer"><span class="icon-facebook"></span></a>
+                                @endif
+                                @if(isset($getSettings['instagram']) && $getSettings['instagram'] != '')
+                                <a href="{{ $getSettings['instagram'] }}" target="_blank" rel="noopener noreferrer"><span class="icon-instagram"></span></a>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <nav class="main-menu main-menu-three">
+                <div class="main-menu-three__wrapper">
+                    <div class="main-menu-three__wrapper-inner">
+                        <div class="main-menu-three__left">
+                            <div class="main-menu-three__logo">
+                                <a href="{{ url('/') }}"><img src="{{ asset('/galerias/logo_dark.png') }}" alt="{{ $getSettings['site_name'] }}"></a>
+                            </div>
+                            <div class="main-menu-three__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                    <li>
+                                        <a href="{{ url('/#inicio') }}">Início</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/#sobre') }}">Sobre</a>
+                                    </li>
+                                    @if(isset($menuSpecialties) && $menuSpecialties->count() > 0)
+                                    <li class="dropdown">
+                                        <a href="{{ url('/#especialidades') }}">Especialidades</a>
+                                        <ul>
+                                            @foreach($menuSpecialties as $specialty)
+                                            <li><a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    @else
+                                    <li>
+                                        <a href="{{ url('/#especialidades') }}">Especialidades</a>
+                                    </li>
+                                    @endif
+                                    @if(isset($menuExams) && $menuExams->count() > 0)
+                                    <li class="dropdown">
+                                        <a href="{{ url('/#servicos') }}">Serviços</a>
+                                        <ul>
+                                            @foreach($menuExams as $exam)
+                                            <li><a href="{{ url('/#servicos') }}">{{ $exam->title }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    @else
+                                    <li>
+                                        <a href="{{ url('/#servicos') }}">Serviços</a>
+                                    </li>
+                                    @endif
+                                    <li>
+                                        <a href="{{ url('/#faq') }}">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/contato') }}">Contato</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-menu-three__right">
+                            <div class="main-menu-three__consultant-box">
+                                <p class="main-menu-three__consultant-text"> <span class="icon-idea-3"></span> Agende sua consulta</p>
+                                <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" class="main-menu-three__consultant-btn" target="_blank">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
-        <!-- header close -->
 
-        <main>
-            <div id="top"></div>
+        <div class="stricky-header stricked-menu main-menu main-menu-three">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
 
-            @yield('content')
-        </main>
+        @yield('content')
 
-
-        @if(isset($getSettings['whatsapp']) && $getSettings['whatsapp'] != '')
+        @if(isset($getSettings['telephone']) && $getSettings['telephone'] != '')
         <div class="whatsapp_futuante pulsaDelay animate__animated animate__tada">
-            <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['whatsapp']) }}" target="_Blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" target="_Blank"><i class="fab fa-whatsapp"></i></a>
         </div>
         @endif
 
-
-        <!-- footer begin -->
-        <footer class="section-dark">
-            <div class="container">
-                <div class="row gx-5">
-                    <div class="col-lg-4 col-sm-6">
-                        <img src="{{ asset('/galerias/logo_sg_branco.png') }}" class="logo-footer" alt="Logomarca SG Serviços">
-                        <div class="spacer-20"></div>
-                        @if(isset($getSettings['meta_description']) && $getSettings['meta_description'] != '')
-                        <p>{!! nl2br(e($getSettings['meta_description'])) !!}</p>
-                        @endif
-
-                        <div class="social-icons mb-sm-30">
-                            @if(isset($getSettings['facebook']) && $getSettings['facebook'] != '')
-                            <a href="{{ $getSettings['facebook'] }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-                            @endif
-                            @if(isset($getSettings['twitter']) && $getSettings['twitter'] != '')
-                            <a href="{{ $getSettings['twitter'] }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-                            @endif
-                            @if(isset($getSettings['whatsapp']) && $getSettings['whatsapp'] != '')
-                            <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['whatsapp']) }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
-                            @endif
-                            @if(isset($getSettings['instagram']) && $getSettings['instagram'] != '')
-                            <a href="{{ $getSettings['instagram'] }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                            @endif
-                            @if(isset($getSettings['youtube']) && $getSettings['youtube'] != '')
-                            <a href="{{ $getSettings['youtube'] }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="widget">
-                                    <h5>Especialidades</h5>
-                                    <ul>
-                                        <li><a href="{{ url('/#especialidades') }}">Oftalmologia Geral</a></li>
-                                        <li><a href="{{ url('/#especialidades') }}">Cirurgia de Catarata</a></li>
-                                        <li><a href="{{ url('/#especialidades') }}">Cirurgia Refrativa</a></li>
-                                        <li><a href="{{ url('/#especialidades') }}">Retina e Vítreo</a></li>
-                                        <li><a href="{{ url('/#especialidades') }}">Glaucoma</a></li>
-                                        <li><a href="{{ url('/#especialidades') }}">Oftalmoplástica</a></li>
-                                    </ul>
+        <!--Site Footer Two Start-->
+        <footer class="site-footer-two">
+            <div class="site-footer__shape-1 float-bob-x">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-shape-1.png') }}" alt="">
+            </div>
+            <div class="site-footer__shape-2 img-bounce">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-two-shape-1.png') }}" alt="">
+            </div>
+            <div class="site-footer__shape-3 float-bob-y">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-shape-3.png') }}" alt="">
+            </div>
+            <div class="site-footer__shape-4 img-bounce">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-two-shape-2.png') }}" alt="">
+            </div>
+            <div class="site-footer__shape-5 float-bob-x">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-shape-5.png') }}" alt="">
+            </div>
+            <div class="site-footer__shape-6 float-bob-y">
+                <img src="{{ asset('/tpl_site/images/shapes/site-footer-shape-6.png') }}" alt="">
+            </div>
+            <div class="site-footer-two__bg-one" style="background-image: url({{ asset('/galerias/fotos/site-footer-two-bg.jpg') }});"></div>
+            <div class="site-footer-two__bg-two" style="background-image: url({{ asset('/galerias/fotos/site-footer-two-bg-2.jpg') }});"></div>
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget-two__about">
+                                <div class="footer-widget-two__logo">
+                                    <a href="{{ url('/') }}"><img src="{{ asset('/galerias/logo_colorida.png') }}" alt="{{ $getSettings['site_name'] }}"></a>
                                 </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="widget">
-                                    <h5>Exames</h5>
-                                    <ul>
-                                        <li><a href="{{ url('/#exames') }}">Mapeamento de Retina</a></li>
-                                        <li><a href="{{ url('/#exames') }}">Tonometria de Aplanação</a></li>
-                                        <li><a href="{{ url('/#exames') }}">Paquimetria</a></li>
-                                        <li><a href="{{ url('/#exames') }}">Ceratoscopia</a></li>
-                                    </ul>
+                                <p class="footer-widget-two__about-text">
+                                    @if(isset($getSettings['meta_description']) && $getSettings['meta_description'] != '')
+                                        {{ strip_tags($getSettings['meta_description']) }}
+                                    @else
+                                        Informações sobre {{ $getSettings['site_name'] }}
+                                    @endif
+                                </p>
+                                <div class="footer-widget-two__lets-start">
+                                    <div class="icon">
+                                        <span class="icon-marketing"></span>
+                                    </div>
+                                    <div class="text">
+                                        <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" target="_blank">Entre em contato</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                        <div class="widget">
-                            <h5>Contato</h5>
-                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Unidade Sede</div>
-                            <div class="text-white">
-                                @if(isset($getSettings['address']) && trim($getSettings['address']) !== '')
-                                {!! nl2br(e($getSettings['address'])) !!}
-                                @endif
-                            </div>
-
-                            <div class="spacer-20"></div>
-
-                            <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Fale Conosco</div>
-                            <div class="text-white small">
-                                @php
-                                $phoneFields = [
-                                'telephone' => 'Recepção',
-                                'telephone_fixo' => 'Recepção (Fixo)',
-                                'cellphone' => 'Financeiro',
-                                'cellphone_other' => 'Relacionamento',
-                                ];
-                                @endphp
-                                @foreach($phoneFields as $field => $label)
-                                @if(isset($getSettings[$field]) && trim($getSettings[$field]) !== '')
-                                <div class="mb-1 d-flex align-items-center gap-2">
-                                    <span class="text-muted d-block">{{ $label }}</span>
-                                    <a href="tel:{{ preg_replace('/\D/', '', $getSettings[$field]) }}" class="text-white">
-                                        {{ $getSettings[$field] }}
-                                    </a>
+                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget-two__explore">
+                                <div class="footer-widget-two__title-box">
+                                    <h4 class="footer-widget-two__title">Links Rápidos</h4>
                                 </div>
-                                @endif
-                                @endforeach
-
-                                @if(isset($getSettings['whatsapp']) && $getSettings['whatsapp'] != '')
-                                <div class="mb-1 d-flex align-items-center gap-2">
-                                    <span class="text-muted d-block">WhatsApp</span>
-                                    <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['whatsapp']) }}" target="_blank" class="text-white">
-                                        {{ $getSettings['whatsapp'] }}
-                                    </a>
-                                </div>
-                                @endif
+                                <ul class="footer-widget-two__explore-list list-unstyled">
+                                    <li><a href="{{ url('/#inicio') }}">Início</a></li>
+                                    <li><a href="{{ url('/#sobre') }}">Sobre</a></li>
+                                    <li><a href="{{ url('/#especialidades') }}">Especialidades</a></li>
+                                    <li><a href="{{ url('/#servicos') }}">Serviços</a></li>
+                                    <li><a href="{{ url('/#faq') }}">FAQ</a></li>
+                                    <li><a href="{{ url('/contato') }}">Contato</a></li>
+                                </ul>
                             </div>
-
-                            <div class="spacer-20"></div>
-
-                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Envie uma mensagem</div>
-                            @if(isset($getSettings['email']) && $getSettings['email'] != '')
-                            <a href="mailto:{{ $getSettings['email'] }}" class="text-white">{{ $getSettings['email'] }}</a>
-                            @else
-                            contato@sgservicos.com.br
-                            @endif
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget-two__latest-post">
+                                <div class="footer-widget-two__title-box">
+                                    <h4 class="footer-widget-two__title">Especialidades</h4>
+                                </div>
+                                <ul class="footer-widget-two__latest-post-list list-unstyled">
+                                    @if(isset($menuSpecialties) && $menuSpecialties->count() > 0)
+                                        @foreach($menuSpecialties->take(2) as $specialty)
+                                        <li>
+                                            <div class="footer-widget-two__latest-post-content">
+                                                <h5 class="footer-widget-two__latest-post-title">
+                                                    <a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a>
+                                                </h5>
+                                            </div>
+                                        </li>
+                                        @endforeach
+                                    @else
+                                        <li>
+                                            <div class="footer-widget-two__latest-post-content">
+                                                <h5 class="footer-widget-two__latest-post-title">
+                                                    <a href="{{ url('/#especialidades') }}">Oftalmologia Geral</a>
+                                                </h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="footer-widget-two__latest-post-content">
+                                                <h5 class="footer-widget-two__latest-post-title">
+                                                    <a href="{{ url('/#especialidades') }}">Cirurgia de Catarata</a>
+                                                </h5>
+                                            </div>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget-two__newsletter">
+                                <div class="footer-widget-two__title-box">
+                                    <h4 class="footer-widget-two__title">Contato</h4>
+                                </div>
+                                <p class="footer-widget-two__newsletter-text">Entre em contato conosco</p>
+                                <div class="footer-widget-two__contact-info">
+                                    @if(isset($getSettings['address']) && trim($getSettings['address']) !== '')
+                                    <p class="footer-widget-two__contact-item">
+                                        <span class="icon-location-filled-1"></span>
+                                        {!! nl2br(e($getSettings['address'])) !!}
+                                    </p>
+                                    @endif
+                                    @if(isset($getSettings['telephone']) && $getSettings['telephone'] != '')
+                                    <p class="footer-widget-two__contact-item">
+                                        <span class="icon-phone"></span>
+                                        <a href="tel:{{ preg_replace('/\D/', '', $getSettings['telephone']) }}">{{ $getSettings['telephone'] }}</a>
+                                    </p>
+                                    @endif
+                                    @if(isset($getSettings['email']) && $getSettings['email'] != '')
+                                    <p class="footer-widget-two__contact-item">
+                                        <span class="icon-email-3"></span>
+                                        <a href="mailto:{{ $getSettings['email'] }}">{{ $getSettings['email'] }}</a>
+                                    </p>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="subfooter">
+            <div class="site-footer__bottom">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="de-flex">
-                                <div class="de-flex-col">
-                                    &copy; {{ date('Y') }} - {{ $getSettings['site_name'] }}. <br class="d-block d-md-none"> Todos os direitos reservados.
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__social">
+                                    <p class="site-footer__social-tag">Social</p>
+                                    <ul class="site-footer__social-box list-unstyled">
+                                        @if(isset($getSettings['facebook']) && $getSettings['facebook'] != '')
+                                        <li>
+                                            <a href="{{ $getSettings['facebook'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        @endif
+                                        @if(isset($getSettings['twitter']) && $getSettings['twitter'] != '')
+                                        <li>
+                                            <a href="{{ $getSettings['twitter'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        @endif
+                                        @if(isset($getSettings['pinterest']) && $getSettings['pinterest'] != '')
+                                        <li>
+                                            <a href="{{ $getSettings['pinterest'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest-p"></i></a>
+                                        </li>
+                                        @endif
+                                        @if(isset($getSettings['instagram']) && $getSettings['instagram'] != '')
+                                        <li>
+                                            <a href="{{ $getSettings['instagram'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        @endif
+                                    </ul>
                                 </div>
-                                <ul class="menu-simple">
-                                    <span class="developers">Desenvolvido por <a href="https://kiwimidia.com" target="_Blank"><img data-src="{{ asset('/logo_kiwimidia_branco.png') }}" class="" loading="lazy" style="width:80px;" alt="Kiwimídia" src="{{ asset('/logo_kiwimidia_branco.png') }}"></a></span>
-                                </ul>
+                                <p class="site-footer__bottom-text">&copy; {{ date('Y') }} {{ $getSettings['site_name'] }}. Todos os direitos reservados. | Desenvolvido por <a href="https://kiwimidia.com" target="_blank">Kiwimídia</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <!-- footer close -->
+        <!--Site Footer Two End-->
 
-        @yield('pageMODAL')
+    </div><!-- /.page-wrapper -->
 
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="{{ url('/') }}" aria-label="logo image"><img src="{{ asset('/galerias/logo_dark.png') }}" width="150" alt="{{ $getSettings['site_name'] }}" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                @if(isset($getSettings['email']) && $getSettings['email'] != '')
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:{{ $getSettings['email'] }}">{{ $getSettings['email'] }}</a>
+                </li>
+                @endif
+                @if(isset($getSettings['telephone']) && $getSettings['telephone'] != '')
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:{{ preg_replace('/\D/', '', $getSettings['telephone']) }}">{{ $getSettings['telephone'] }}</a>
+                </li>
+                @endif
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    @if(isset($getSettings['twitter']) && $getSettings['twitter'] != '')
+                    <a href="{{ $getSettings['twitter'] }}" target="_blank" rel="noopener noreferrer" class="fab fa-twitter"></a>
+                    @endif
+                    @if(isset($getSettings['facebook']) && $getSettings['facebook'] != '')
+                    <a href="{{ $getSettings['facebook'] }}" target="_blank" rel="noopener noreferrer" class="fab fa-facebook-square"></a>
+                    @endif
+                    @if(isset($getSettings['pinterest']) && $getSettings['pinterest'] != '')
+                    <a href="{{ $getSettings['pinterest'] }}" target="_blank" rel="noopener noreferrer" class="fab fa-pinterest-p"></a>
+                    @endif
+                    @if(isset($getSettings['instagram']) && $getSettings['instagram'] != '')
+                    <a href="{{ $getSettings['instagram'] }}" target="_blank" rel="noopener noreferrer" class="fab fa-instagram"></a>
+                    @endif
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
     </div>
+    <!-- /.mobile-nav__wrapper -->
 
-    <!-- JS here -->
-    <script src="{{ asset('/tpl_site/js/plugins.js') }}"></script>
-    <script src="{{ asset('/tpl_site/js/designesia.js') }}"></script>
 
-    <!-- Close mobile menu on anchor link click and scroll -->
-    <script>
-        (function($) {
-            'use strict';
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
-            // Flag para controlar se estamos processando um clique em link
-            var isProcessingClick = false;
-            var menuJustOpened = false;
-            var isClosingMenu = false;
+    @yield('pageMODAL')
 
-            // Função para fechar o menu mobile usando trigger de clique no botão
-            function closeMobileMenu() {
-                var $header = $('header');
-                var $menuBtn = $('#menu-btn');
+    <!-- Vendor JS -->
+    <script src="{{ asset('/tpl_site/vendors/jquery/jquery-3.6.4.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jarallax/jarallax.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-appear/jquery.appear.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-circle-progress/jquery.circle-progress.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-validate/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/odometer/odometer.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/swiper/swiper.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/tiny-slider/tiny-slider.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/wnumb/wNumb.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/wow/wow.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/isotope/isotope.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/countdown/countdown.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/bxslider/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/vegas/vegas.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/jquery-ui/jquery-ui.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/timepicker/timePicker.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/circleType/jquery.circleType.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/circleType/jquery.lettering.min.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/sidebar-content/jquery-sidebar-content.js') }}"></script>
+    <script src="{{ asset('/tpl_site/vendors/nice-select/jquery.nice-select.min.js') }}"></script>
 
-                // Verificar se o menu está aberto e não estamos já fechando
-                if ($header.hasClass('menu-open') && !isClosingMenu) {
-                    isClosingMenu = true;
-
-                    // Usar trigger de clique no botão para manter o estado sincronizado
-                    $menuBtn[0].click();
-
-                    // Resetar flag após um pequeno delay
-                    setTimeout(function() {
-                        isClosingMenu = false;
-                    }, 100);
-                }
-            }
-
-            // Detectar cliques em links de âncora no menu mobile e scroll
-            $(document).ready(function() {
-                // Aguardar um pouco para garantir que o designesia.js foi carregado
-                setTimeout(function() {
-                    // Detectar quando o menu é aberto (para evitar fechar imediatamente)
-                    $(document).on('click', '#menu-btn', function() {
-                        // Se não estamos fechando programaticamente, marcar como aberto
-                        if (!isClosingMenu) {
-                            menuJustOpened = true;
-                            setTimeout(function() {
-                                menuJustOpened = false;
-                            }, 500);
-                        }
-                    });
-
-                    // Detectar cliques em links do menu que contêm âncoras
-                    // Usar capture phase para executar ANTES do evento de navegação
-                    $(document).on('click', '#mainmenu a[href*="#"]', function(e) {
-                        var href = $(this).attr('href');
-                        var $header = $('header');
-                        var $link = $(this);
-
-                        // Verificar se é um link de âncora (não é uma página externa)
-                        if (href.indexOf('#') !== -1 && href.indexOf('http') === -1 && href.indexOf('mailto:') === -1) {
-                            // Verificar se estamos em modo mobile (menu aberto)
-                            if ($header.hasClass('menu-open')) {
-                                // Prevenir o comportamento padrão temporariamente
-                                e.preventDefault();
-                                e.stopPropagation();
-
-                                // Marcar que estamos processando um clique
-                                isProcessingClick = true;
-
-                                // Fechar o menu IMEDIATAMENTE
-                                closeMobileMenu();
-
-                                // Aguardar um frame para garantir que o menu fechou
-                                requestAnimationFrame(function() {
-                                    requestAnimationFrame(function() {
-                                        // Agora permitir a navegação
-                                        var targetId = href.split('#')[1];
-                                        var $target = $('#' + targetId);
-
-                                        if ($target.length) {
-                                            $('html, body').animate({
-                                                scrollTop: $target.offset().top - 100
-                                            }, 500);
-                                        } else {
-                                            // Fallback: permitir navegação normal
-                                            window.location.href = href;
-                                        }
-
-                                        // Resetar a flag após um tempo
-                                        setTimeout(function() {
-                                            isProcessingClick = false;
-                                        }, 800);
-                                    });
-                                });
-
-                                return false;
-                            }
-                        }
-                    });
-
-                    // Detectar scroll e fechar o menu mobile
-                    // Mas não fechar se acabamos de abrir o menu ou clicar em um link
-                    var scrollTimer = null;
-                    $(window).on('scroll', function() {
-                        // Verificar se o menu está aberto, não acabamos de abrir e não estamos processando um clique
-                        if ($('header').hasClass('menu-open') && !isProcessingClick && !menuJustOpened && !isClosingMenu) {
-                            // Usar debounce para evitar múltiplas chamadas
-                            clearTimeout(scrollTimer);
-                            scrollTimer = setTimeout(function() {
-                                closeMobileMenu();
-                            }, 150);
-                        }
-                    });
-                }, 500);
-            });
-        })(jQuery);
-    </script>
+    <!-- template js -->
+    <script src="{{ asset('/tpl_site/js/corle.js') }}"></script>
 
     <!-- Others Js -->
     <script src="{{ asset('/plugins/sweetalert/sweetalert2.min.js') }}"></script>
