@@ -1,0 +1,34 @@
+<?php
+
+namespace Database\Seeders;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Setting;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        $this->call(UserGroupsSeeder::class);
+        $this->call(PermissionsSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(SettingsSeeder::class);
+        $this->call(StatusesSeeder::class);
+        $this->call(IntegrationsSeeder::class);
+        $this->call(PagesSeeder::class);
+        $this->call(ServicesSeeder::class);
+        $this->call(PortfoliosSeeder::class);
+        $this->call(TestimonialsSeeder::class);
+        $this->call(TeamsSeeder::class);
+        $this->call(HeroesSeeder::class);
+        $this->call(AboutsSeeder::class);
+        $this->call(SpecialtiesSeeder::class);
+        $this->call(ExamsSeeder::class);
+        $this->call(FaqsSeeder::class);
+    }
+}
