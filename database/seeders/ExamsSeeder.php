@@ -17,10 +17,10 @@ class ExamsSeeder extends Seeder
         }
         
         $exams = [
-            ['title' => 'Mapeamento de Retina', 'description' => 'Exame detalhado do fundo do olho para detectar alterações na retina, mácula e nervo óptico.', 'icon' => 'fas fa-eye', 'status' => $statusEnabled->id, 'sort_order' => 1],
-            ['title' => 'Tonometria de Aplanação', 'description' => 'Mede a pressão intraocular com precisão, fundamental para prevenir e acompanhar o glaucoma.', 'icon' => 'fas fa-tachometer-alt', 'status' => $statusEnabled->id, 'sort_order' => 2],
-            ['title' => 'Paquimetria', 'description' => 'Avalia a espessura da córnea e auxilia no diagnóstico de doenças corneanas e cirurgias refrativas.', 'icon' => 'fas fa-diagnoses', 'status' => $statusEnabled->id, 'sort_order' => 3],
-            ['title' => 'Ceratoscopia', 'description' => 'Mapeia a curvatura da córnea, permitindo identificar irregularidades e diagnosticar ceratocone.', 'icon' => 'fas fa-project-diagram', 'status' => $statusEnabled->id, 'sort_order' => 4],
+            ['title' => 'CND em Dia', 'description' => 'Tenha suas Certidões Negativas de Débito sempre em dia, garantindo a regularidade fiscal da sua empresa.', 'icon' => 'fas fa-file-check', 'status' => $statusEnabled->id, 'sort_order' => 1],
+            ['title' => 'Suporte Simples Nacional', 'description' => 'Acompanhamento completo do Simples Nacional, incluindo cálculos mensais e orientações sobre alíquotas.', 'icon' => 'fas fa-calculator', 'status' => $statusEnabled->id, 'sort_order' => 2],
+            ['title' => 'Acompanhamento de Pendências', 'description' => 'Monitoramento constante de pendências fiscais e trabalhistas, com alertas e orientações para regularização.', 'icon' => 'fas fa-exclamation-triangle', 'status' => $statusEnabled->id, 'sort_order' => 3],
+            ['title' => 'Parcelamentos e Simulações', 'description' => 'Análise de parcelamentos disponíveis e simulações de valores para facilitar a regularização da empresa.', 'icon' => 'fas fa-chart-line', 'status' => $statusEnabled->id, 'sort_order' => 4],
         ];
         
         foreach ($exams as $exam) {

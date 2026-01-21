@@ -17,12 +17,9 @@ class SpecialtiesSeeder extends Seeder
         }
         
         $specialties = [
-            ['title' => 'Oftalmologia Geral', 'description' => 'Atendimento completo para prevenção, diagnóstico e tratamento de doenças oculares.', 'image' => 'tpl_site/images/services/1.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 1],
-            ['title' => 'Cirurgia de Catarata', 'description' => 'Procedimentos modernos e seguros, com recuperação rápida e visão renovada.', 'image' => 'tpl_site/images/services/2.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 2],
-            ['title' => 'Cirurgia Refrativa', 'description' => 'Tratamentos a laser para corrigir miopia, hipermetropia e astigmatismo.', 'image' => 'tpl_site/images/services/3.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 3],
-            ['title' => 'Retina e Vítreo', 'description' => 'Diagnóstico e tratamento de retinopatias, degeneração macular e descolamentos.', 'image' => 'tpl_site/images/services/4.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 4],
-            ['title' => 'Glaucoma', 'description' => 'Avaliação completa, diagnóstico precoce e controle contínuo com tecnologia de ponta.', 'image' => 'tpl_site/images/services/5.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 5],
-            ['title' => 'Oftalmoplástica & Oftalmopediatria', 'description' => 'Tratamentos funcionais e estéticos, além do acompanhamento especializado para crianças.', 'image' => 'tpl_site/images/services/6.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 6],
+            ['title' => 'Abertura e Regularização de Empresa', 'description' => 'Especializados no processo de abertura, alteração e regularização de empresas, com acesso direto aos sistemas dos órgãos responsáveis.', 'image' => 'tpl_site/images/services/1.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 1],
+            ['title' => 'Escrita Fiscal', 'description' => 'Realizamos a escrituração das notas fiscais de entrada e saída, apuração de impostos e acompanhamento de obrigações assessórias mensais e anuais.', 'image' => 'tpl_site/images/services/2.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 2],
+            ['title' => 'Contabilidade Geral', 'description' => 'Atendemos empresas de pequeno e médio porte com atividades de Serviços, Comércio e Transportadoras. Lançamentos contábeis mensais e rotinas de escrituração.', 'image' => 'tpl_site/images/services/3.webp', 'link' => '/#contato', 'status' => $statusEnabled->id, 'sort_order' => 3],
         ];
         
         foreach ($specialties as $specialty) {

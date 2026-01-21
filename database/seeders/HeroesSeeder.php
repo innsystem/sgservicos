@@ -24,35 +24,35 @@ class HeroesSeeder extends Seeder
         
         $statistics = [
             [
-                'title' => 'Anos dedicados à saúde ocular',
-                'value' => '+X',
+                'title' => 'Anos de experiência',
+                'value' => '+2',
                 'description' => ''
             ],
             [
-                'title' => 'Pacientes atendidos na região',
-                'value' => '+1000',
+                'title' => 'Clientes atendidos',
+                'value' => '+100',
                 'description' => ''
             ],
             [
-                'title' => 'Especialidades oftalmológicas',
-                'value' => '8',
+                'title' => 'Serviços oferecidos',
+                'value' => '3',
                 'description' => ''
             ],
             [
-                'title' => 'Suporte e acompanhamento',
-                'value' => '24h',
+                'title' => 'Atendimento',
+                'value' => 'Online',
                 'description' => ''
             ],
         ];
         
         Hero::create([
-            'title' => 'Excelência em Oftalmologia no Sudeste Goiano',
-            'description' => 'Sejam bem-vindos ao maior hospital de olhos do Sudeste Goiano, referência em tecnologia, excelência médica e atendimento humanizado. Agora, estamos ainda mais próximos de você com a nova unidade em Pires do Rio.',
-            'button_text' => 'Agendar agora',
+            'title' => 'Soluções Contábeis Eficientes e Personalizadas',
+            'description' => 'Oferecemos soluções contábeis eficientes, personalizadas e acessíveis, simplificando processos e garantindo tranquilidade fiscal para nossos clientes. Escritório contábil moderno, inovador e próximo do cliente.',
+            'button_text' => 'Fale conosco',
             'button_link' => '/#contato',
             'background_image' => 'tpl_site/images/background/1.webp',
-            'satisfied_patients_count' => '24k',
-            'satisfied_patients_label' => 'Pacientes satisfeitos',
+            'satisfied_patients_count' => '+100',
+            'satisfied_patients_label' => 'Clientes satisfeitos',
             'statistics' => $statistics,
             'status' => $statusEnabled->id,
             'sort_order' => 1,

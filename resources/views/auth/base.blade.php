@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('/galerias/favicon_sg.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/galerias/favicon.ico?1') }}" type="image/x-icon">
     
     <!-- Theme Config Js -->
     <script src="{{ asset('/tpl_dashboard/js/config.js?2') }}"></script>

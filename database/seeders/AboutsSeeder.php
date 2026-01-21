@@ -17,19 +17,21 @@ class AboutsSeeder extends Seeder
         }
         
         $features = [
-            'Atendimento humanizado',
-            'Nova unidade em Pires do Rio',
-            'Equipamentos de alta tecnologia',
-            'Equipe multidisciplinar especializada',
+            'Proximidade e atendimento humanizado',
+            'Clareza e objetividade',
+            'Inovação e tecnologia',
+            'Agilidade nos processos',
+            'Compromisso com resultados',
+            'Respeito às pessoas e aos negócios',
         ];
         
         About::create([
             'subtitle' => 'Sobre a SG Serviços',
-            'title' => 'Hospital de olhos referência em tecnologia e cuidado',
-            'description' => 'Com mais de X anos de experiência dedicados à saúde ocular, contamos com uma equipe de oftalmologistas especialistas, equipamentos de alta tecnologia e a confiança de centenas de pacientes satisfeitos em toda a região.',
-            'description_2' => 'Nossa estrutura foi planejada para oferecer conforto, segurança e acolhimento, em um ambiente totalmente acessível e preparado para proporcionar uma experiência única para você e sua família.',
+            'title' => 'Escritório contábil moderno, inovador e próximo do cliente',
+            'description' => 'Fundada em 10/01/2023, a SG Serviços oferece soluções contábeis eficientes, personalizadas e acessíveis, simplificando processos e garantindo tranquilidade fiscal para nossos clientes.',
+            'description_2' => 'Somos reconhecidos pela agilidade, clareza das informações e excelência no atendimento. Trabalhamos com empresas de pequeno e médio porte, com atividades de Serviços, Comércio e Transportadoras.',
             'features' => $features,
-            'button_text' => 'Conheça nossos tratamentos',
+            'button_text' => 'Conheça nossos serviços',
             'button_link' => '/#contato',
             'image_1' => 'tpl_site/images/misc/l1.webp',
             'image_2' => 'tpl_site/images/misc/s1.webp',

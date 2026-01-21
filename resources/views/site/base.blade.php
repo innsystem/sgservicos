@@ -29,7 +29,7 @@
     <meta name="twitter:image" content="@yield('image', asset($getSettings['logo']))">
 
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ asset('/galerias/favicon_sg.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/galerias/favicon.ico?1') }}" type="image/x-icon">
 
     <!-- CSS here -->
     <link href="{{ asset('/tpl_site/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
