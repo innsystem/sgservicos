@@ -74,13 +74,10 @@
                         </div>
                     </div>
                     @endif
-                    @if($about->button_text && $about->button_link)
+                    @if($about->button_text)
                     <div class="about-three__business-start-year">
-                        <div class="about-three__business-start-year-icon">
-                            <span class="icon-badge-rank"></span>
-                        </div>
                         <div class="about-three__business-start-year-content">
-                            <a href="{{ $about->button_link }}" class="thm-btn">{{ $about->button_text }}</a>
+                            <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" class="thm-btn" target="_blank">{{ $about->button_text }}</a>
                         </div>
                     </div>
                     @endif

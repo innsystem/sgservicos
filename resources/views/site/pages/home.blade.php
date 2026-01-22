@@ -130,7 +130,7 @@
                 <p class="cta-two__text">Oferecemos serviços contábeis especializados para sua empresa com tecnologia de ponta.</p>
             </div>
             <div class="cta-two__btn-box">
-                <a href="{{ url('/#especialidades') }}" class="thm-btn cta-two__btn">Ver Todas as Especialidades</a>
+                <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" class="thm-btn cta-two__btn" target="_blank">Entre em Contato</a>
             </div>
         </div>
     </div>
@@ -149,14 +149,6 @@
             @foreach($specialties as $index => $specialty)
             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ ($index % 4) * 100 }}ms">
                 <div class="services-two__single">
-                    <div class="services-two__arrow-box">
-                        <div class="services-two__arrow-shape-1">
-                            <img src="{{ asset('/galerias/fotos/services-two-shape-1.png') }}" alt="">
-                        </div>
-                        <a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}" class="services-two__arrow">
-                            <span class="icon-right-arrow-2"></span>
-                        </a>
-                    </div>
                     <div class="services-two__icon">
                         @if($specialty->icon)
                         <span class="{{ $specialty->icon }}"></span>
@@ -164,15 +156,32 @@
                         <span class="icon-seo"></span>
                         @endif
                     </div>
-                    <h3 class="services-two__title">
-                        <a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a>
-                    </h3>
+                    <h3 class="services-two__title">{{ $specialty->title }}</h3>
                     @if($specialty->description)
                     <p class="services-two__text">{{ $specialty->description }}</p>
                     @endif
                 </div>
             </div>
             @endforeach
+            @if(isset($exams) && $exams->count() > 0)
+                @foreach($exams->take(3) as $index => $exam)
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ (($specialties->count() + $index) % 4) * 100 }}ms">
+                    <div class="services-two__single">
+                        <div class="services-two__icon">
+                            @if($exam->icon)
+                            <span class="{{ $exam->icon }}"></span>
+                            @else
+                            <span class="icon-idea"></span>
+                            @endif
+                        </div>
+                        <h3 class="services-two__title">{{ $exam->title }}</h3>
+                        @if($exam->description)
+                        <p class="services-two__text">{{ $exam->description }}</p>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+            @endif
         </div>
     </div>
 </section>
@@ -250,13 +259,10 @@
                         </div>
                     </div>
                     @endif
-                    @if($about->button_text && $about->button_link)
+                    @if($about->button_text)
                     <div class="about-three__business-start-year">
-                        <div class="about-three__business-start-year-icon">
-                            <span class="icon-badge-rank"></span>
-                        </div>
                         <div class="about-three__business-start-year-content">
-                            <a href="{{ $about->button_link }}" class="thm-btn">{{ $about->button_text }}</a>
+                            <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" class="thm-btn" target="_blank">{{ $about->button_text }}</a>
                         </div>
                     </div>
                     @endif
@@ -268,40 +274,6 @@
 <!--About Three End-->
 @endif
 
-@if(isset($exams) && $exams->count() > 0)
-<!--How It Work Start-->
-<section id="servicos" class="how-it-work how-it-work-two">
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="section-title__tagline">Nossos Serviços</span>
-            <h2 class="section-title__title">Nossos Processos de Trabalho</h2>
-        </div>
-        <div class="how-it-work__bottom">
-            <div class="row">
-                @foreach($exams->take(3) as $index => $exam)
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="{{ ($index + 1) * 100 }}ms">
-                    <div class="how-it-work__single">
-                        <div class="how-it-work__count"></div>
-                        <div class="how-it-work__icon">
-                            @if($exam->icon)
-                            <span class="{{ $exam->icon }}"></span>
-                            @else
-                            <span class="icon-idea"></span>
-                            @endif
-                        </div>
-                        <h3 class="how-it-work__title">{{ $exam->title }}</h3>
-                        @if($exam->description)
-                        <p class="how-it-work__text-2">{{ $exam->description }}</p>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-<!--How It Work End-->
-@endif
 
 @if(isset($testimonials) && $testimonials->count() > 0)
 <!--Testimonial Three Start-->

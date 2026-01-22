@@ -196,3 +196,21 @@
 .main-slider-three .container{
     padding-top:50px;
 }
+
+/* Ajuste de legibilidade do texto de contato no footer */
+.footer-widget-two__contact-info {
+    color: #ffffff !important;
+}
+
+.footer-widget-two__contact-item {
+    color: #ffffff !important;
+}
+
+.footer-widget-two__contact-item a {
+    color: #ffffff !important;
+}
+
+.footer-widget-two__contact-item a:hover {
+    color: #f0f0f0 !important;
+    opacity: 0.9;
+}

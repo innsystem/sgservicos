@@ -266,14 +266,6 @@
                                         Informações sobre {{ $getSettings['site_name'] }}
                                     @endif
                                 </p>
-                                <div class="footer-widget-two__lets-start">
-                                    <div class="icon">
-                                        <span class="icon-marketing"></span>
-                                    </div>
-                                    <div class="text">
-                                        <a href="https://api.whatsapp.com/send/?phone=55{{ preg_replace('/\D/', '', $getSettings['telephone']) }}" target="_blank">Entre em contato</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
