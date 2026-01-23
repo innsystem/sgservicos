@@ -47,3 +47,13 @@ Mensalmente efetuamos lançamentos contábeis de todas as receitas e despesas. R
 41998602603
 
 Não possuem fotos do escritório, e não há escritório físico.
+
+
+ incluí mais um item no escopo dos serviços oferecidos,  terceirização da área fiscal e de DP/RH.*
+Empresa Simples – Serviços Oferecidos:
+Tenha suas CND’s em dia
+Suporte completo no Simples Nacional
+Redução de custos com apuração de impostos
+Acompanhamento de pendências fiscais
+Parcelamentos e simulações
+Acompanhamento do limite do Simples Nacional e MEI
