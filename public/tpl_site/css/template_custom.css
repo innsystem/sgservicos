@@ -279,6 +279,52 @@
     padding-top: 50px;
 }
 
+/* Alinhamentos de imagem do slider */
+.image-layer-three.image-position-left {
+    background-position: left center !important;
+}
+
+.image-layer-three.image-position-center {
+    background-position: center center !important;
+}
+
+.image-layer-three.image-position-right {
+    background-position: right center !important;
+}
+
+/* Ajustes específicos para mobile com diferentes alinhamentos */
+@media (max-width: 767px) {
+    .image-layer-three.image-position-left {
+        background-position: left center !important;
+        background-size: cover !important;
+    }
+    
+    .image-layer-three.image-position-center {
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    
+    .image-layer-three.image-position-right {
+        background-position: right center !important;
+        background-size: cover !important;
+    }
+    
+    /* Ajuste do overlay para melhor legibilidade quando a pessoa está à direita */
+    .swiper-slide.slide-image-right .main-slider-three__overly-bg {
+        background: linear-gradient(90deg, rgba(41, 33, 28, 0.85) 0%, rgba(41, 33, 28, 0.6) 50%, rgba(41, 33, 28, 0.3) 100%) !important;
+    }
+    
+    /* Ajuste do overlay para melhor legibilidade quando a pessoa está à esquerda */
+    .swiper-slide.slide-image-left .main-slider-three__overly-bg {
+        background: linear-gradient(270deg, rgba(41, 33, 28, 0.85) 0%, rgba(41, 33, 28, 0.6) 50%, rgba(41, 33, 28, 0.3) 100%) !important;
+    }
+    
+    /* Ajuste do overlay para melhor legibilidade quando a pessoa está no centro */
+    .swiper-slide.slide-image-center .main-slider-three__overly-bg {
+        background: linear-gradient(180deg, rgba(41, 33, 28, 0.85) 0%, rgba(41, 33, 28, 0.6) 50%, rgba(41, 33, 28, 0.3) 100%) !important;
+    }
+}
+
 /* Ajuste de legibilidade do texto de contato no footer */
 .footer-widget-two__contact-info {
     color: #ffffff !important;

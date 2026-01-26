@@ -30,6 +30,7 @@ class SlidersSeeder extends Seeder
                 'href' => $defaultWhatsApp,
                 'target' => '_blank',
                 'image' => 'fotos/main-slider-3-1.jpg',
+                'image_position' => 'center',
                 'status' => $statusEnabled->id,
             ],
             [
@@ -37,6 +38,7 @@ class SlidersSeeder extends Seeder
                 'href' => $defaultWhatsApp,
                 'target' => '_blank',
                 'image' => 'fotos/main-slider-3-2.jpg',
+                'image_position' => 'center',
                 'status' => $statusEnabled->id,
             ],
             [
@@ -44,6 +46,7 @@ class SlidersSeeder extends Seeder
                 'href' => $defaultWhatsApp,
                 'target' => '_blank',
                 'image' => 'fotos/main-slider-3-3.jpg',
+                'image_position' => 'center',
                 'status' => $statusEnabled->id,
             ],
         ];

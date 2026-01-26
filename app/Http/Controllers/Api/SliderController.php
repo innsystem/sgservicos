@@ -33,6 +33,7 @@ class SliderController extends Controller
   'href' => 'string',
   'target' => 'required|string',
   'image' => 'required|string',
+  'image_position' => 'nullable|string|in:left,center,right',
   'status' => 'required|string',
 ));
         return response()->json($this->sliderService->createSlider($data), 201);
@@ -45,6 +46,7 @@ class SliderController extends Controller
   'href' => 'string',
   'target' => 'required|string',
   'image' => 'required|string',
+  'image_position' => 'nullable|string|in:left,center,right',
   'status' => 'required|string',
 ));
         return response()->json($this->sliderService->updateSlider($id, $data));

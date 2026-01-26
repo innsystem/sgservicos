@@ -47,7 +47,7 @@
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {"el": "#main-slider-pagination", "type": "bullets", "clickable": true}, "navigation": {"nextEl": "#main-slider__swiper-button-next", "prevEl": "#main-slider__swiper-button-prev"}, "autoplay": {"delay": 5000}}'>
         <div class="swiper-wrapper">
             @foreach($sliders as $index => $slider)
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-image-{{ $slider->image_position ?? 'center' }}">
                 @php
                     // Determinar a imagem do slide
                     $slideImage = null;
@@ -68,7 +68,7 @@
                         $slideImage = $defaultImages[$defaultIndex] ?? $defaultImages[0];
                     }
                 @endphp
-                <div class="image-layer-three" style="background-image: url({{ $slideImage }});"></div>
+                <div class="image-layer-three image-position-{{ $slider->image_position ?? 'center' }}" style="background-image: url({{ $slideImage }});"></div>
                 <div class="main-slider__shape-1" style="background-image: url({{ asset('/tpl_site/images/backgrounds/main-slider-shape-1.jpg') }});"></div>
                 <div class="main-slider__shape-2 float-bob-y">
                     <img src="{{ asset('/galerias/fotos/main-slider-shape-2.png') }}" alt="">

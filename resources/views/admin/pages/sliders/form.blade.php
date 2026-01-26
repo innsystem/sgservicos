@@ -25,6 +25,17 @@
             </div>
         </div>
         <div class="form-group mb-3">
+            <label for="image_position" class="col-sm-12">Posição da Imagem:</label>
+            <div class="col-sm-12">
+                <select name="image_position" id="image_position" class="form-select">
+                    <option value="left" @if (isset($result->image_position) && $result->image_position == 'left') selected @endif>Esquerda</option>
+                    <option value="center" @if (!isset($result->image_position) || $result->image_position == 'center') selected @endif>Centro</option>
+                    <option value="right" @if (isset($result->image_position) && $result->image_position == 'right') selected @endif>Direita</option>
+                </select>
+                <small class="form-text text-muted">Escolha onde a pessoa está posicionada na imagem para melhor exibição no mobile</small>
+            </div>
+        </div>
+        <div class="form-group mb-3">
             <label for="status" class="col-sm-12">Status:</label>
             <div class="col-sm-12">
                 <select name="status" id="status" class="form-select">
