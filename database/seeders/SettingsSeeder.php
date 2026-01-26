@@ -30,12 +30,17 @@ class SettingsSeeder extends Seeder
             ['key' => 'cellphone', 'value' => '(41) 99860-2603'],
             ['key' => 'address', 'value' => 'Atendimento online - Horário comercial'],
             ['key' => 'hour_open', 'value' => 'Horário comercial'],
+            ['key' => 'instagram', 'value' => 'https://www.instagram.com/elienai_gomees'],
+            ['key' => 'linkedin', 'value' => 'https://www.linkedin.com/in/elienai-gomes'],
             ['key' => 'client_id', 'value' => Str::uuid()],
             ['key' => 'client_secret', 'value' => Str::random(40)],
         ];
 
         foreach ($settings as $setting) {
-            Setting::create($setting);
+            Setting::updateOrCreate(
+                ['key' => $setting['key']],
+                ['value' => $setting['value']]
+            );
         }
     }
 }

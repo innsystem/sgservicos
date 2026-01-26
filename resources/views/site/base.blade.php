@@ -254,7 +254,7 @@
             <div class="site-footer__top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget-two__about">
                                 <div class="footer-widget-two__logo">
                                     <a href="{{ url('/') }}"><img src="{{ asset('/galerias/logo_colorida.png') }}" alt="{{ $getSettings['site_name'] }}"></a>
@@ -268,52 +268,29 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget-two__explore">
-                                <div class="footer-widget-two__title-box">
-                                    <h4 class="footer-widget-two__title">Links Rápidos</h4>
-                                </div>
-                                <ul class="footer-widget-two__explore-list list-unstyled">
-                                    <li><a href="{{ url('/#inicio') }}">Início</a></li>
-                                    <li><a href="{{ url('/#sobre') }}">Sobre</a></li>
-                                    <li><a href="{{ url('/#especialidades') }}">Especialidades</a></li>
-                                    <li><a href="{{ url('/#servicos') }}">Serviços</a></li>
-                                    <li><a href="{{ url('/#faq') }}">FAQ</a></li>
-                                    <li><a href="{{ url('/contato') }}">Contato</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="col-xl-5 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                             <div class="footer-widget-two__latest-post">
                                 <div class="footer-widget-two__title-box">
                                     <h4 class="footer-widget-two__title">Especialidades</h4>
                                 </div>
-                                <ul class="footer-widget-two__latest-post-list list-unstyled">
-                                    @if(isset($menuSpecialties) && $menuSpecialties->count() > 0)
-                                        @foreach($menuSpecialties->take(2) as $specialty)
-                                        <li>
-                                            <div class="footer-widget-two__latest-post-content">
-                                                <h5 class="footer-widget-two__latest-post-title">
-                                                    <a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a>
-                                                </h5>
-                                            </div>
-                                        </li>
+                                <ul class="footer-widget-two__explore-list list-unstyled">
+                                    @if(isset($specialties) && $specialties->count() > 0)
+                                        @foreach($specialties as $specialty)
+                                        <li><a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a></li>
                                         @endforeach
-                                    @else
-                                        <li>
-                                            <div class="footer-widget-two__latest-post-content">
-                                                <h5 class="footer-widget-two__latest-post-title">
-                                                    <a href="{{ url('/#especialidades') }}">Oftalmologia Geral</a>
-                                                </h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="footer-widget-two__latest-post-content">
-                                                <h5 class="footer-widget-two__latest-post-title">
-                                                    <a href="{{ url('/#especialidades') }}">Cirurgia de Catarata</a>
-                                                </h5>
-                                            </div>
-                                        </li>
+                                    @elseif(isset($menuSpecialties) && $menuSpecialties->count() > 0)
+                                        @foreach($menuSpecialties as $specialty)
+                                        <li><a href="{{ $specialty->link ? $specialty->link : url('/#especialidades') }}">{{ $specialty->title }}</a></li>
+                                        @endforeach
+                                    @endif
+                                    @if(isset($exams) && $exams->count() > 0)
+                                        @foreach($exams->take(3) as $exam)
+                                        <li><a href="{{ url('/#especialidades') }}">{{ $exam->title }}</a></li>
+                                        @endforeach
+                                    @elseif(isset($menuExams) && $menuExams->count() > 0)
+                                        @foreach($menuExams->take(3) as $exam)
+                                        <li><a href="{{ url('/#especialidades') }}">{{ $exam->title }}</a></li>
+                                        @endforeach
                                     @endif
                                 </ul>
                             </div>
@@ -377,9 +354,14 @@
                                             <a href="{{ $getSettings['instagram'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                                         </li>
                                         @endif
+                                        @if(isset($getSettings['linkedin']) && $getSettings['linkedin'] != '')
+                                        <li>
+                                            <a href="{{ $getSettings['linkedin'] }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                        @endif
                                     </ul>
                                 </div>
-                                <p class="site-footer__bottom-text">&copy; {{ date('Y') }} {{ $getSettings['site_name'] }}. Todos os direitos reservados. | Desenvolvido por <a href="https://kiwimidia.com" target="_blank">Kiwimídia</a></p>
+                                <p class="site-footer__bottom-text">&copy; {{ date('Y') }} {{ $getSettings['site_name'] }}. Todos os direitos reservados. | Desenvolvido por <a href="https://innsystem.com.br" target="_blank">InnSystem.com.br</a></p>
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@ class ServicesSeeder extends Seeder
             [
                 'title' => 'Terceirização da Área Fiscal e de DP/RH',
                 'slug' => 'terceirizacao-da-area-fiscal-e-de-dp-rh',
-                'description' => '<p>Terceirize as tarefas fiscais e de departamento pessoal de sua empresa com a SG Serviços e tenha tranquilidade para focar no seu negócio.</p><p><strong>Empresa Simples – Serviços Oferecidos:</strong></p><ul><li>Tenha suas CND\'s em dia</li><li>Suporte completo no Simples Nacional</li><li>Redução de custos com apuração de impostos</li><li>Acompanhamento de pendências fiscais</li><li>Parcelamentos e simulações</li><li>Acompanhamento do limite do Simples Nacional e MEI</li></ul>',
+                'description' => '<p>Terceirize as tarefas fiscais e de departamento pessoal de sua empresa com a SG Serviços e tenha tranquilidade para focar no seu negócio.</p><p><strong>Empresa Simples – Serviços Oferecidos:</strong></p><ul><li>Terceirização do setor fiscal| DP</li><li>Suporte completo no Simples Nacional</li><li>Redução de custos com apuração de impostos</li><li>Acompanhamento de pendências fiscais</li><li>Parcelamentos e simulações</li><li>Acompanhamento do limite do Simples Nacional e MEI</li></ul>',
                 'thumb' => 'tpl_site/images/services/4.webp',
                 'status' => $statusEnabled->id,
                 'sort_order' => 4,

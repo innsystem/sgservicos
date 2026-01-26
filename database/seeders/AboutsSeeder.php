@@ -28,7 +28,7 @@ class AboutsSeeder extends Seeder
         About::create([
             'subtitle' => 'Sobre a SG Serviços',
             'title' => 'Escritório contábil moderno, inovador e próximo do cliente',
-            'description' => 'Fundada em 10/01/2023, a SG Serviços oferece soluções contábeis eficientes, personalizadas e acessíveis, simplificando processos e garantindo tranquilidade fiscal para nossos clientes.',
+            'description' => 'Fundada em 29-10-2024, a SG Serviços oferece soluções contábeis eficientes, personalizadas e acessíveis, simplificando processos e garantindo tranquilidade fiscal para nossos clientes.',
             'description_2' => 'Somos reconhecidos pela agilidade, clareza das informações e excelência no atendimento. Trabalhamos com empresas de pequeno e médio porte, com atividades de Serviços, Comércio e Transportadoras.',
             'features' => $features,
             'button_text' => 'Conheça nossos serviços',

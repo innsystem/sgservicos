@@ -357,7 +357,7 @@
                 <div class="progress-one__right">
                     <div class="progress-one__img-box">
                         <div class="progress-one__img">
-                            <img src="{{ asset('/galerias/fotos/progress-one-img-1.jpg') }}" alt="">
+                            <img src="{{ asset('/storage/fotos/progress-one-img-1.jpg') }}" alt="">
                         </div>
                         <div class="progress-one__let-get-to-work">
                                 <p class="progress-one__let-get-to-work-text">

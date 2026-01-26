@@ -9,6 +9,6 @@ class Specialty extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'image', 'link', 'status', 'sort_order'];
+    protected $fillable = ['title', 'description', 'image', 'link', 'icon', 'status', 'sort_order'];
 }
 
