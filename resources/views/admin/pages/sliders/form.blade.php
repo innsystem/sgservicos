@@ -1,9 +1,17 @@
 <form id="form-request-sliders">
     <div class="modal-body">
         <div class="form-group mb-3">
-            <label for="image" class="col-sm-12">Imagem:</label>
+            <label for="image" class="col-sm-12">Imagem{{ isset($result) ? ' (opcional - deixe em branco para manter a atual)' : '' }}:</label>
             <div class="col-sm-12">
                 <input type="file" accept=".jpg, .jpeg, .png, .hiff" class="form-control" id="image" name="image">
+                @if(isset($result) && $result->image)
+                <small class="form-text text-muted mt-2 d-block">
+                    Imagem atual: 
+                    <a href="{{ asset('storage/' . $result->image) }}" target="_blank" class="text-primary">
+                        <i class="fa fa-image"></i> Ver imagem atual
+                    </a>
+                </small>
+                @endif
             </div>
         </div>
         <div class="form-group mb-3">

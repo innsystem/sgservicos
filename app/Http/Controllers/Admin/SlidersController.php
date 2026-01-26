@@ -103,20 +103,22 @@ class SlidersController extends Controller
     {
         $result = $request->all();
 
+        // Buscar o slider existente para manter a imagem se não houver nova
+        $existingSlider = $this->sliderService->getSliderById($id);
+
         // 'email'         => "unique:sliders,email,$id,id",
         $rules = array(
             'title' => 'required',
             'href' => 'nullable',
             'target' => 'required',
-            'image' => 'required',
+            'image' => 'nullable', // Opcional na edição
             'status' => 'required',
         );
         $messages = array(
             'title.required' => 'title é obrigatório',
-            'href.required' => 'href é obrigatório',
             'href.nullable' => 'href pode ser nulo',
             'target.required' => 'target é obrigatório',
-            'image.required' => 'image é obrigatório',
+            'image.nullable' => 'image é opcional na edição',
             'status.required' => 'status é obrigatório',
         );
 
@@ -130,7 +132,11 @@ class SlidersController extends Controller
             $image = $request->file('image');
             $imagePath = $image->store('sliders', 'public');
             $result['image'] = $imagePath;
+        } else {
+            // Se não houver nova imagem, manter a imagem existente
+            $result['image'] = $existingSlider->image;
         }
+        
         $slider = $this->sliderService->updateSlider($id, $result);
 
         return response()->json($this->name . ' atualizado com sucesso', 200);
