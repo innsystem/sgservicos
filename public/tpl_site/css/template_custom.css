@@ -193,8 +193,90 @@
     }
 }
 
-.main-slider-three .container{
-    padding-top:50px;
+/* Ajustes do container do slider para mobile */
+@media (max-width: 767px) {
+    .main-slider-three .container {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+    
+    .main-slider-three__title {
+        font-size: 32px !important;
+        line-height: 40px !important;
+        margin-bottom: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .main-slider-three__text {
+        font-size: 16px !important;
+        line-height: 26px !important;
+        max-width: 100% !important;
+    }
+    
+    .main-slider-three__sub-title {
+        font-size: 14px !important;
+        line-height: 16px !important;
+    }
+    
+    .main-slider-three__sub-title-box {
+        padding-left: 10px !important;
+        padding-right: 5px !important;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+    }
+    
+    .main-slider-three__btn-box {
+        margin-top: 30px !important;
+    }
+    
+    .main-slider-three__btn-1 {
+        font-size: 13px !important;
+        padding: 12px 25px 11px !important;
+    }
+    
+    /* Ajuste do overlay para mobile */
+    .main-slider-three__overly-bg {
+        width: 100% !important;
+        background: linear-gradient(180deg, rgba(41, 33, 28, 0.85) 0%, rgba(41, 33, 28, 0.6) 50%, rgba(41, 33, 28, 0.3) 100%) !important;
+    }
+    
+    /* Ocultar formas decorativas no mobile para melhor visualização */
+    .main-slider__shape-2,
+    .main-slider__shape-3 {
+        display: none !important;
+    }
+    
+    /* Ajuste da altura mínima do slide */
+    .main-slider-three .swiper-slide {
+        min-height: 400px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-slider-three .container {
+        padding-top: 120px !important;
+        padding-bottom: 120px !important;
+    }
+    
+    .main-slider-three__title {
+        font-size: 48px !important;
+        line-height: 58px !important;
+        max-width: 70% !important;
+    }
+    
+    .main-slider-three__text {
+        font-size: 18px !important;
+        line-height: 30px !important;
+        max-width: 70% !important;
+    }
+    
+    .main-slider-three__overly-bg {
+        width: 100% !important;
+    }
+}
+
+.main-slider-three .container {
+    padding-top: 50px;
 }
 
 /* Ajuste de legibilidade do texto de contato no footer */
