@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@yield('title', $getSettings['site_name']) - Contábil & BPO Financeiro / DP / RH</title>
+    <title>@yield('title', $getSettings['site_name']) - SG Serviços</title>
 
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/galerias/favicon.ico?1') }}" />
