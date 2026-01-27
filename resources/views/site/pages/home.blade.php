@@ -283,7 +283,7 @@
             <span class="section-title__tagline">DEPOIMENTOS</span>
             <h2 class="section-title__title">O Que Nossos Clientes Dizem</h2>
         </div>
-        <div class="testimonial-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{"items": 3, "margin": 30, "smartSpeed": 700, "loop":true, "autoplay": 6000, "nav":true, "dots":false, "navText": ["<span class=\"icon-right-arrow\"></span>","<span class=\"icon-right-arrow1\"></span>"], "responsive":{"0":{"items":1}, "768":{"items":2}, "992":{"items": 3}}}'>
+        <div class="testimonial-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{"items": 3, "margin": 30, "smartSpeed": 700, "loop":true, "autoplay": false, "nav":true, "dots":false, "navText": ["<span class=\"icon-right-arrow\"></span>","<span class=\"icon-right-arrow1\"></span>"], "responsive":{"0":{"items":1}, "768":{"items":2}, "992":{"items": 3}}}'>
             @foreach($testimonials as $testimonial)
             <div class="item">
                 <div class="testimonial-two__single">

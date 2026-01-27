@@ -342,3 +342,23 @@
     color: #f0f0f0 !important;
     opacity: 0.9;
 }
+
+/* Rodapé fixo - sem parallax */
+.site-footer-two__bg-one,
+.site-footer-two__bg-two {
+    background-attachment: fixed !important;
+    background-position: center center !important;
+}
+
+/* Remover animações dos shapes do rodapé */
+.site-footer-two .site-footer__shape-1.float-bob-x,
+.site-footer-two .site-footer__shape-2.img-bounce,
+.site-footer-two .site-footer__shape-3.float-bob-y,
+.site-footer-two .site-footer__shape-4.img-bounce,
+.site-footer-two .site-footer__shape-5.float-bob-x,
+.site-footer-two .site-footer__shape-6.float-bob-y {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
