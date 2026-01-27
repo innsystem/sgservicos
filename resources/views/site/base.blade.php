@@ -69,7 +69,7 @@
     <link rel="stylesheet" href="{{ asset('/tpl_site/css/color-3.css') }}" />
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('/tpl_site/css/template_custom.css?1') }}" />
+    <link rel="stylesheet" href="{{ asset('/tpl_site/css/template_custom.css?2') }}" />
 
     <!-- SwalFire -->
     <link href="{{ asset('/plugins/sweetalert/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />

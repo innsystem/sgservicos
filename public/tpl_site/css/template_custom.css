@@ -362,3 +362,25 @@
     transform: none !important;
     -webkit-transform: none !important;
 }
+
+/* Avatar circular para depoimentos (inicial do nome) */
+.testimonial-two__client-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.testimonial-avatar-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--corle-base, #2563eb);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+}

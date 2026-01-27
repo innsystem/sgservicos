@@ -300,12 +300,13 @@
                     <h4 class="testimonial-two__title">{{ $testimonial->name }}</h4>
                     <p class="testimonial-two__text">{{ $testimonial->content }}</p>
                     <div class="testimonial-two__client-details">
-                        <div class="testimonial-two__client-img">
-                            @if($testimonial->avatar)
-                            <img src="{{ asset('storage/' . $testimonial->avatar) }}" alt="{{ $testimonial->name }}">
-                            @else
-                            <img src="{{ asset('/tpl_site/images/testimonial/testimonial-2-1.jpg') }}" alt="{{ $testimonial->name }}">
-                            @endif
+                        @php
+                            $initial = mb_strtoupper(mb_substr($testimonial->name ?? '', 0, 1, 'UTF-8'));
+                        @endphp
+                        <div class="testimonial-two__client-avatar">
+                            <div class="testimonial-avatar-circle">
+                                {{ $initial }}
+                            </div>
                         </div>
                         <div class="testimonial-two__info">
                             <h3 class="testimonial-two__client-name">{{ $testimonial->name }}</h3>
