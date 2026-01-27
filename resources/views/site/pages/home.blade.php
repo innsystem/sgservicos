@@ -1,6 +1,6 @@
 @extends('site.base')
 
-@section('title', 'Home - Contábil & BPO Financeiro / DP / RH')
+@section('title', 'Contábil & BPO Financeiro / DP / RH')
 
 @section('content')
 
